@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    margin: 100px;
+    margin: 100px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +96,7 @@ body {
 
 .GameBtns {
 
-    padding: 100px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -176,4 +176,98 @@ body {
     border-radius: 8px;
     border: none;
     cursor: pointer;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.dig {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Rule-next-Btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Rule-next-Btn button {
+    padding: 10px 30px;
+    margin: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+ .btn-wrap2 {
+    display: none;
+}
+
+#resultPage-btns {
+    height: 330px;
+}
+
+.RuleTexts {
+    width: 300px;
+    height: 350px;
+    border: 2px black;
+    background-color: antiquewhite;
+
+    position: absolute;
+    right: 30px;
+
+    font-family: 'Roboto', sans-serif;
+    color: #ffff;
+    font-weight: 400;
+    background-color: #004429;
+
+    /* margin: 10px; */
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 8px;
+    border: 3px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.rule-list {
+    position: relative;
+
+    padding: 3px;
+}
+
+.close-btn {
+    position: absolute;
+    right: -3px;
+    top: -25px;
+}
+
+.RuleTexts ul {
+    list-style-position: outside;
+}
+
+
+
+.RuleTexts ul li {
+    padding: 8px;
+    list-style-type: square;
+    color: #FFD600;  
+}
+
+.RuleTexts li span {
+    color: #fff;
 }
