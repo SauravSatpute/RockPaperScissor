@@ -72,7 +72,7 @@ body {
     height: 100%;
     width: 143px;
     box-sizing: border-box;
-    
+
     margin: 0px 5px;
     padding: 0px 18px;
     /* margin: 0px 5px; */
@@ -86,3 +86,94 @@ body {
     border-radius: 8px;
 }
 
+.gameContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.GameBtns {
+
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.row-btns {
+    width: 390px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.rock-btn {
+    position: relative;
+    
+}
+
+.rock-btn #rockImg {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    
+}
+
+.scissor-btn {
+    position: relative;
+}
+
+.scissor-btn #scissorImg {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+}
+
+.paper-btn {
+    position: relative;
+}
+
+.paper-btn #paperImg {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+.middleText {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+
+}
+
+#resultText {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.wide-box {
+    width: 700px;
+}
+
+.middleText button {
+    padding: 10px 30px;
+    margin: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
