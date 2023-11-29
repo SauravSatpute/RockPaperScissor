@@ -4,8 +4,10 @@ function hideDiv() {
     console.log("Rock Click");
 
     document.querySelector("#homepage-btns").style = " display : none;"
-    document.querySelector("#opp2Scissor").style = "display:none;"
-    // document.querySelector("#opp3Paper").style = "display:none;"
+    document.querySelector("#opp1Scissor").style = "display:none;"
+    document.querySelector("#opp1Paper").style = "display:none;"
+    document.querySelector("#opp2Paper").style = "display:none;"
+    document.querySelector("#opp2Rock").style = "display:none;"
     document.querySelector("#resultPage-btns").style = " display : block;"
 }
 
