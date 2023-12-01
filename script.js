@@ -1,14 +1,39 @@
+
+
 let btn1 = document.getElementById("rock-btn-imges");
 let btn2 = document.getElementById("scissorImg")
 let btn3 = document.getElementById("paperImg")
-let replay = document.getElementById("play-again-btn")
-
+let replay = document.getElementById("play-again-btn");
+let hurrayNext = document.getElementById("Hurray-play-again-btn");
 let userScore = document.getElementById("userScore");
 let compScore = document.getElementById("compScore");
+
+
+
 let nextBtn = document.querySelector(".btn-wrap2");
 let closeBtn = document.querySelector(".close-btn");
 let rulesBtn = document.querySelector("#Rule-btn");
 
+let uScore;
+let cScore;
+
+document.querySelector("#resultPage-btns").style = " display : none;"
+document.querySelector(".RuleTexts").style = "display:none"
+document.querySelector(".Hurray").style = "display:none;"
+nextBtn.style = "display:none"
+
+
+if(localStorage.getItem('compScore') != null || localStorage.getItem('userScore') != null) {
+    cScore = localStorage.getItem('compScore');
+    uScore = localStorage.getItem('userScore');
+
+    console.log(cScore)
+    compScore.textContent = parseInt(cScore);
+    userScore.textContent = parseInt(uScore);
+}else {
+    uScore = userScore.textContent;
+    cScore = compScore.textContent;
+}
 
 
 function rockHideDiv() {
@@ -16,6 +41,7 @@ function rockHideDiv() {
     document.querySelector("#resultPage-btns").style = "display : block;"
     console.log("Rock Click");
     let num = Math.floor(Math.random() * 3) + 1;
+    
 
     if(num == 1) {
         //Rock
@@ -24,6 +50,8 @@ function rockHideDiv() {
         document.querySelector("#opp2Rock").style = "display:block;"
         nextBtn.style = "display:none"
 
+        uScore = userScore.textContent;
+        cScore = compScore.textContent;
         
 
         document.getElementById("resultText").textContent = "TIE UP"
@@ -38,8 +66,9 @@ function rockHideDiv() {
         nextBtn.style = "display:none"
 
 
-        let score = compScore.textContent;
-        compScore.textContent = parseInt(score) + 1;
+        cScore = compScore.textContent;
+        cScore = parseInt(cScore) + 1;
+        compScore.textContent = cScore;
 
         document.getElementById("resultText").textContent = "YOU LOST"
         document.getElementById("play-again-btn").textContent = "PLAY AGAIN"
@@ -53,8 +82,9 @@ function rockHideDiv() {
         document.querySelector("#opp2Scissor").style = "display:block;"
         nextBtn.style = "display:block"
 
-        let score = userScore.textContent;
-        userScore.textContent = parseInt(score) + 1;
+        uScore = userScore.textContent;
+        uScore = parseInt(uScore) + 1;
+        userScore.textContent = uScore;
 
         document.getElementById("resultText").textContent = "YOU WIN"
         document.getElementById("play-again-btn").textContent = "PLAY AGAIN"
@@ -63,8 +93,11 @@ function rockHideDiv() {
 
     document.querySelector("#opp1Scissor").style = "display:none;"
     document.querySelector("#opp1Paper").style = "display:none;"
-    document.querySelector("#opp1Rock").style = "display:block;"
+    
 
+    document.querySelector("#opp1Rock").style = "display:block;"
+    localStorage.setItem('compScore', cScore);
+    localStorage.setItem('userScore', uScore);
 
 }
 
@@ -82,8 +115,9 @@ function scisssorHideDiv() {
         nextBtn.style = "display:none"
 
 
-        let score = compScore.textContent;
-        compScore.textContent = parseInt(score) + 1;
+        cScore = compScore.textContent;
+        cScore = parseInt(cScore) + 1;
+        compScore.textContent = cScore;
 
         document.getElementById("resultText").textContent = "YOU LOST"
         document.getElementById("play-again-btn").textContent = "PLAY AGAIN"
@@ -97,8 +131,9 @@ function scisssorHideDiv() {
         nextBtn.style = "display:block"
 
 
-        let score = userScore.textContent;
-        userScore.textContent = parseInt(score) + 1;
+        uScore = userScore.textContent;
+        uScore = parseInt(uScore) + 1;
+        userScore.textContent = uScore;
 
         document.getElementById("resultText").textContent = "YOU WIN"
         document.getElementById("play-again-btn").textContent = "PLAY AGAIN"
@@ -110,6 +145,8 @@ function scisssorHideDiv() {
         document.querySelector("#opp2Scissor").style = "display:block;"
         nextBtn.style = "display:none"
 
+        uScore = userScore.textContent;
+        cScore = compScore.textContent;
 
         document.getElementById("resultText").textContent = "TIE UP"
         document.getElementById("play-again-btn").textContent = "REPLAY"
@@ -119,6 +156,8 @@ function scisssorHideDiv() {
     document.querySelector("#opp1Rock").style = "display:none;"
     document.querySelector("#opp1Paper").style = "display:none;"
     document.querySelector("#opp1Scissor").style = "display:block;"
+    localStorage.setItem('compScore', cScore);
+    localStorage.setItem('userScore', uScore);
 
 }
 
@@ -136,8 +175,9 @@ function paperHideDiv() {
         nextBtn.style = "display:block"
 
 
-        let score = userScore.textContent;
-        userScore.textContent = parseInt(score) + 1;
+        uScore = userScore.textContent;
+        uScore = parseInt(uScore) + 1;
+        userScore.textContent = uScore;
 
         document.getElementById("resultText").textContent = "YOU WIN"
         document.getElementById("play-again-btn").textContent = "PLAY AGAIN"
@@ -149,6 +189,8 @@ function paperHideDiv() {
         document.querySelector("#opp2Paper").style = "display:block;"
         nextBtn.style = "display:none"
 
+        uScore = userScore.textContent;
+        cScore = compScore.textContent;
 
         document.getElementById("resultText").textContent = "TIE UP"
         document.getElementById("play-again-btn").textContent = "REPLAY"
@@ -160,8 +202,9 @@ function paperHideDiv() {
         nextBtn.style = "display:none"
 
 
-        let score = compScore.textContent;
-        compScore.textContent = parseInt(score) + 1;
+        cScore = compScore.textContent;
+        cScore = parseInt(cScore) + 1;
+        compScore.textContent = cScore;
 
         document.getElementById("resultText").textContent = "YOU LOST"
         document.getElementById("play-again-btn").textContent = "PLAY AGAIN"
@@ -172,15 +215,14 @@ function paperHideDiv() {
     document.querySelector("#opp1Scissor").style = "display:none;"
     document.querySelector("#opp1Paper").style = "display:block;"
   
+    localStorage.setItem('compScore', cScore);
+    localStorage.setItem('userScore', uScore);
 }
 
 
 
 
 
-document.querySelector("#resultPage-btns").style = " display : none;"
-document.querySelector(".RuleTexts").style = "display:none"
-nextBtn.style = "display:none"
 
 
 btn1.addEventListener("click", rockHideDiv);
@@ -194,6 +236,23 @@ document.querySelector("#resultPage-btns").style = " display : none;"
 document.querySelector("#homepage-btns").style = " display : flex;"
 nextBtn.style = "display:none"
 
+})
+
+nextBtn.addEventListener("click", () => {
+    document.querySelector(".scores").style = "display:none;"
+    document.querySelector("#homepage-btns").style = " display : none;"
+    document.querySelector("#resultPage-btns").style = " display : none;"
+    nextBtn.style = "display:none"
+    document.querySelector(".Hurray").style = "display:flex"
+
+})
+
+hurrayNext.addEventListener("click", () => {
+    document.querySelector("#resultPage-btns").style = " display : none;"
+    document.querySelector(".Hurray").style = "display:none;"
+    nextBtn.style = "display:none;"
+    document.querySelector(".scores").style = "display:flex;"
+    document.querySelector("#homepage-btns").style = " display : flex;"
 })
 
 closeBtn.addEventListener("click",() => {

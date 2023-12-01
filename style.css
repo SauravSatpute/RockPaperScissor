@@ -271,3 +271,47 @@ body {
 .RuleTexts li span {
     color: #fff;
 }
+
+
+.Hurray {
+    width: 90vw;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.win-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hurray-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.winning-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.3rem;
+    color: #fff;
+    font-weight: 600;
+
+    
+}
+
+.hurray-img {
+    position: relative;
+}
+
+.trophyImg {
+    position: absolute;
+    top: 90px;
+    left: 141px;
+}
